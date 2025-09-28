@@ -8,10 +8,14 @@ def get_book_text(file_path):
         return file.read()
 
 def main():
-    book_text = get_book_text("books/frankenstein.txt").lower()
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    file_path = sys.argv[1]
+    book_text = get_book_text(file_path).lower()
     num_words = count_words(book_text)
     character_dict = count_characters(book_text)
     sorted_list_of_dicts = create_sorted_list_of_dicts(character_dict)
-    print_report(num_words, sorted_list_of_dicts)    
+    print_report(file_path, num_words, sorted_list_of_dicts)    
 
 main()

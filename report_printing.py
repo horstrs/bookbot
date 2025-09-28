@@ -4,9 +4,9 @@ def print_all_in_new_line(list_of_dict):
             continue
         print(f"{entry["char"]}: {entry["num"]}")
 
-def print_report(words, characters):
+def print_report(file_path, words, characters):
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {file_path}...")
     print("----------- Word Count ----------")
     print(f"Found {words} total words")
     print("--------- Character Count -------")
